@@ -160,3 +160,45 @@ Traceback (most recent call last):
     raise ImportError("請先安裝 llama-cpp-python：pip install llama-cpp-python")
 ImportError: 請先安裝 llama-cpp-python：pip install llama-cpp-python
 2026-05-11 09:09:35,650 [INFO] === Pipeline 完成，總耗時 27.37 分鐘 ===
+2026-05-11 09:20:59,404 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-11 09:20:59,404 [INFO] 啟用模型：['whisper', 'fw_large', 'sensevoice']
+2026-05-11 09:20:59,404 [INFO] 執行 LLM merge：True
+2026-05-11 09:21:58,589 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-11 09:21:58,589 [INFO] 啟用模型：['sensevoice']
+2026-05-11 09:21:58,589 [INFO] 執行 LLM merge：False
+2026-05-11 09:21:58,589 [INFO] [whisper] 跳過
+2026-05-11 09:21:58,589 [INFO] [fw_medium] 跳過
+2026-05-11 09:21:58,589 [INFO] [fw_large] 跳過
+2026-05-11 09:22:01,944 [INFO] download models from model hub: ms
+2026-05-11 09:22:05,758 [WARNING] trust_remote_code: True
+2026-05-11 09:22:06,898 [INFO] Loading pretrained params from /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt
+2026-05-11 09:22:06,902 [INFO] ckpt: /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt
+2026-05-11 09:22:07,369 [INFO] scope_map: ['module.', 'None']
+2026-05-11 09:22:07,369 [INFO] excludes: None
+2026-05-11 09:22:07,470 [INFO] Loading ckpt: /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt, status: <All keys matched successfully>
+2026-05-11 09:22:07,540 [INFO] Building VAD model.
+2026-05-11 09:22:07,541 [INFO] download models from model hub: ms
+2026-05-11 09:22:10,591 [WARNING] trust_remote_code: False
+2026-05-11 09:22:10,595 [INFO] Loading pretrained params from /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt
+2026-05-11 09:22:10,595 [INFO] ckpt: /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt
+2026-05-11 09:22:10,598 [INFO] scope_map: ['module.', 'None']
+2026-05-11 09:22:10,598 [INFO] excludes: None
+2026-05-11 09:22:10,599 [INFO] Loading ckpt: /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt, status: <All keys matched successfully>
+2026-05-11 09:24:35,630 [ERROR] [sensevoice] 執行失敗：cannot access local variable 'punc_res' where it is not associated with a value
+Traceback (most recent call last):
+  File "/LeibnizHD1/pc/TestPlace/voice/main_pipeline.py", line 109, in main
+    srt_path = run_fn(audio_path)
+               ^^^^^^^^^^^^^^^^^^
+  File "/LeibnizHD1/pc/TestPlace/voice/src/transcribe_sensevoice.py", line 56, in run
+    res = model.generate(
+          ^^^^^^^^^^^^^^^
+  File "/home/pc/miniconda3/envs/voice/lib/python3.11/site-packages/funasr/auto/auto_model.py", line 329, in generate
+    return self.inference_with_vad(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/miniconda3/envs/voice/lib/python3.11/site-packages/funasr/auto/auto_model.py", line 656, in inference_with_vad
+    punc_res[0]["punc_array"],
+    ^^^^^^^^
+UnboundLocalError: cannot access local variable 'punc_res' where it is not associated with a value
+2026-05-11 09:24:35,667 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
+2026-05-11 09:24:35,667 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
+2026-05-11 09:24:35,667 [INFO] === Pipeline 完成，總耗時 2.62 分鐘 ===
