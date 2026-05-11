@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from config import MODEL_SUFFIX, OUTPUT_DIR
-from prompts.prompt_Voice_to_Text import DOMAIN_PROMPT_sensevoice  # noqa: F401（SenseVoice 不使用 initial_prompt，保留備用）
+from prompts.prompt_Voice_to_Text import DOMAIN_PROMPT_sensevoice as DOMAIN_PROMPT  # noqa: F401（SenseVoice 不使用 initial_prompt，保留備用）
 
 try:
     from funasr import AutoModel
