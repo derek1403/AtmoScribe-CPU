@@ -1,3 +1,5 @@
 99/
 data/audio_inputs/*
 __pycache__
+prompts/__pycache__
+src/__pycache__/
