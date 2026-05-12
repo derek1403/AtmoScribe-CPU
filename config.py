@@ -10,6 +10,9 @@ DATA_DIR     = PROJECT_ROOT / "data" / "audio_inputs"
 OUTPUT_DIR   = PROJECT_ROOT / "outputs"
 LOG_DIR      = PROJECT_ROOT / "logs"
 
+# sherpa-onnx SenseVoice 模型資料夾（需含 model.int8.onnx 與 tokens.txt）
+SHERPA_SENSEVOICE_MODEL_DIR = PROJECT_ROOT / "models" / "sherpa_sensevoice"
+
 # ==========================================
 # 模型開關（True = 執行，False = 跳過）
 # 可在 main_pipeline.py 或 CLI 參數覆蓋

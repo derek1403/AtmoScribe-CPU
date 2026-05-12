@@ -39,10 +39,10 @@ log = logging.getLogger(__name__)
 # ── 模型對應表 ─────────────────────────────────────────
 # key → (config 開關屬性名稱, transcribe 函數 lazy import)
 MODEL_MAP = {
-    "whisper":    ("ENABLE_WHISPER",       "src.transcribe_whisper",       "run"),
-    "fw_medium":  ("ENABLE_FASTER_MEDIUM", "src.transcribe_faster_medium", "run"),
-    "fw_large":   ("ENABLE_FASTER_LARGE",  "src.transcribe_faster_large",  "run"),
-    "sensevoice": ("ENABLE_SENSEVOICE",    "src.transcribe_sensevoice",    "run"),
+    "whisper":    ("ENABLE_WHISPER",       "src.transcribe_whisper",               "run"),
+    "fw_medium":  ("ENABLE_FASTER_MEDIUM", "src.transcribe_faster_medium",         "run"),
+    "fw_large":   ("ENABLE_FASTER_LARGE",  "src.transcribe_faster_large",          "run"),
+    "sensevoice": ("ENABLE_SENSEVOICE",    "src.transcribe_sherpa_sensevoice",     "run"),
 }
 
 

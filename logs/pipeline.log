@@ -202,3 +202,66 @@ UnboundLocalError: cannot access local variable 'punc_res' where it is not assoc
 2026-05-11 09:24:35,667 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
 2026-05-11 09:24:35,667 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
 2026-05-11 09:24:35,667 [INFO] === Pipeline 完成，總耗時 2.62 分鐘 ===
+2026-05-11 10:25:17,543 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-11 10:25:17,543 [INFO] 啟用模型：[]
+2026-05-11 10:25:17,543 [INFO] 執行 LLM merge：False
+2026-05-11 10:25:17,543 [INFO] [whisper] 跳過
+2026-05-11 10:25:17,543 [INFO] [fw_medium] 跳過
+2026-05-11 10:25:17,543 [INFO] [fw_large] 跳過
+2026-05-11 10:25:17,543 [INFO] [sensevoice] 跳過
+2026-05-11 10:25:17,543 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
+2026-05-11 10:25:17,543 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
+2026-05-11 10:25:17,543 [INFO] === Pipeline 完成，總耗時 0.00 分鐘 ===
+2026-05-11 10:26:35,573 [INFO] === Pipeline 開始：TC0408-02.mp3 ===
+2026-05-11 10:26:35,573 [INFO] 啟用模型：[]
+2026-05-11 10:26:35,573 [INFO] 執行 LLM merge：False
+2026-05-11 10:26:35,573 [INFO] [whisper] 跳過
+2026-05-11 10:26:35,573 [INFO] [fw_medium] 跳過
+2026-05-11 10:26:35,573 [INFO] [fw_large] 跳過
+2026-05-11 10:26:35,573 [INFO] [sensevoice] 跳過
+2026-05-11 10:26:35,573 [INFO] === Pipeline 完成，總耗時 0.00 分鐘 ===
+2026-05-11 10:27:59,695 [INFO] === Pipeline 開始：TC0408-02.mp3 ===
+2026-05-11 10:27:59,695 [INFO] 啟用模型：['sensevoice']
+2026-05-11 10:27:59,696 [INFO] 執行 LLM merge：False
+2026-05-11 10:27:59,696 [INFO] [whisper] 跳過
+2026-05-11 10:27:59,696 [INFO] [fw_medium] 跳過
+2026-05-11 10:27:59,696 [INFO] [fw_large] 跳過
+2026-05-11 10:28:03,088 [INFO] download models from model hub: ms
+2026-05-11 10:28:06,243 [WARNING] trust_remote_code: True
+2026-05-11 10:28:07,299 [INFO] Loading pretrained params from /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt
+2026-05-11 10:28:07,302 [INFO] ckpt: /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt
+2026-05-11 10:28:07,767 [INFO] scope_map: ['module.', 'None']
+2026-05-11 10:28:07,767 [INFO] excludes: None
+2026-05-11 10:28:07,868 [INFO] Loading ckpt: /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt, status: <All keys matched successfully>
+2026-05-11 10:28:07,938 [INFO] Building VAD model.
+2026-05-11 10:28:07,938 [INFO] download models from model hub: ms
+2026-05-11 10:28:11,329 [WARNING] trust_remote_code: False
+2026-05-11 10:28:11,332 [INFO] Loading pretrained params from /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt
+2026-05-11 10:28:11,332 [INFO] ckpt: /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt
+2026-05-11 10:28:11,335 [INFO] scope_map: ['module.', 'None']
+2026-05-11 10:28:11,335 [INFO] excludes: None
+2026-05-11 10:28:11,336 [INFO] Loading ckpt: /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt, status: <All keys matched successfully>
+2026-05-11 10:28:22,819 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-11 10:28:22,819 [INFO] 啟用模型：['sensevoice']
+2026-05-11 10:28:22,819 [INFO] 執行 LLM merge：False
+2026-05-11 10:28:22,819 [INFO] [whisper] 跳過
+2026-05-11 10:28:22,819 [INFO] [fw_medium] 跳過
+2026-05-11 10:28:22,819 [INFO] [fw_large] 跳過
+2026-05-11 10:28:26,209 [INFO] download models from model hub: ms
+2026-05-11 10:28:31,040 [WARNING] trust_remote_code: True
+2026-05-11 10:28:32,109 [INFO] Loading pretrained params from /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt
+2026-05-11 10:28:32,112 [INFO] ckpt: /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt
+2026-05-11 10:28:32,578 [INFO] scope_map: ['module.', 'None']
+2026-05-11 10:28:32,578 [INFO] excludes: None
+2026-05-11 10:28:32,679 [INFO] Loading ckpt: /home/pc/.cache/modelscope/hub/models/iic/SenseVoiceSmall/model.pt, status: <All keys matched successfully>
+2026-05-11 10:28:32,749 [INFO] Building VAD model.
+2026-05-11 10:28:32,750 [INFO] download models from model hub: ms
+2026-05-11 10:28:36,005 [WARNING] trust_remote_code: False
+2026-05-11 10:28:36,012 [INFO] Loading pretrained params from /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt
+2026-05-11 10:28:36,012 [INFO] ckpt: /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt
+2026-05-11 10:28:36,017 [INFO] scope_map: ['module.', 'None']
+2026-05-11 10:28:36,017 [INFO] excludes: None
+2026-05-11 10:28:36,018 [INFO] Loading ckpt: /home/pc/.cache/modelscope/hub/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch/model.pt, status: <All keys matched successfully>
+2026-05-11 10:31:00,960 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
+2026-05-11 10:31:00,960 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
+2026-05-11 10:31:00,960 [INFO] === Pipeline 完成，總耗時 2.64 分鐘 ===
