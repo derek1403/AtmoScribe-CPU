@@ -14,25 +14,28 @@
 ```
 voice_project/
 ├── data/
-│   └── audio_inputs/                 # 放原始 .mp3 / .m4a 錄音檔
-├── models/                           # 本機模型檔案（如 GGUF）
+│   └── audio_inputs/           # 放原始 .mp3 / .m4a 錄音檔
+├── models/
+│   └── sherpa_sensevoice/      # sherpa-onnx SenseVoice 模型檔案
+│       ├── model.int8.onnx
+│       └── tokens.txt
 ├── src/
 │   ├── transcribe_whisper.py
 │   ├── transcribe_faster_medium.py
 │   ├── transcribe_faster_large.py
-│   ├── transcribe_sensevoice.py
+│   ├── transcribe_sherpa_sensevoice.py
 │   └── merge_llm.py
 ├── prompts/
 │   ├── prompt_Voice_to_Text.py
 │   └── prompt_merge_llm.py
-├── logs/                             # pipeline.log 自動生成於此
+├── logs/                       # pipeline.log 自動生成於此
 ├── outputs/
 │   └── {audio_stem}/
-│       ├── transcriptions/           # 各語音模型輸出的 SRT
-│       └── merged_llm/               # LLM 融合後的最終 SRT
+│       ├── transcriptions/     # 各語音模型輸出的 SRT
+│       └── merged_llm/         # LLM 融合後的最終 SRT
 ├── generate_task_runner_sh_script.py # 生成自動化腳本
-├── config.py                         # 模型開關、優先級、路徑設定
-├── main_pipeline.py                  # 主流程控制
+├── config.py                   # 模型開關、優先級、路徑設定
+├── main_pipeline.py            # 主流程控制
 └── README.md
 ```
 
@@ -64,16 +67,38 @@ pip install openai-whisper
 # Faster-Whisper（medium 與 large-v3-turbo 共用）
 pip install faster-whisper
 
-# SenseVoice（FunASR）
-pip install funasr modelscope
+# sherpa-onnx SenseVoice
+pip install sherpa-onnx soundfile numpy
 
 # LLM merge（Qwen 7B GGUF）
 pip install llama-cpp-python
 ```
 
-> **注意：** 第一次執行各模型時，會自動從 Hugging Face 或 ModelScope 下載模型權重，需要一段時間與足夠的磁碟空間。
+**3. 安裝系統套件**
+
+```bash
+# ffmpeg（sherpa-onnx SenseVoice 將 MP3 轉 WAV 時需要）
+sudo apt install ffmpeg      # Ubuntu / Debian
+# 或
+conda install -c conda-forge ffmpeg
+```
+
+確認安裝成功：
+```bash
+ffmpeg -version
+```
+
+**4. 放置 sherpa-onnx SenseVoice 模型檔案**
+
+將以下兩個檔案放入 `models/sherpa_sensevoice/`：
+- `model.int8.onnx`
+- `tokens.txt`
+
+可從 [sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17](https://github.com/k2-fsa/sherpa-onnx/releases) 下載。
+
+> **注意：** 第一次執行各模型時，會自動從 Hugging Face 下載模型權重，需要一段時間與足夠的磁碟空間。
 > - `large-v3-turbo`（INT8）：約 1.6 GB
-> - `SenseVoiceSmall`：約 500 MB
+> - `sherpa-onnx SenseVoice`（INT8）：約 400 MB（需手動放置）
 > - Qwen 2.5-7B Q3：約 3.5 GB
 
 ---
@@ -174,25 +199,12 @@ MERGE_CANDIDATES = ["sensevoice", "fw_large", "whisper"]
 
 ## 常見問題
 
-**Q：SenseVoice 出現 `KeyError: 'timestamp'`**
-
-`AutoModel` 不可加入 `punc_model` 參數，請確認 `transcribe_sensevoice.py` 中沒有這行：
-```python
-punc_model="ct-punc-c",  # ❌ 會造成 KeyError
-```
-SenseVoice 已內建標點預測，不需額外掛載。
-
 **Q：想換成不同的 Qwen GGUF 量化版本**
 
 修改 `config.py` 中的 `LLM_FILENAME`，例如：
 ```python
 LLM_FILENAME = "qwen2.5-7b-instruct-q4_k_m.gguf"  # 更高品質，但更慢
 ```
-
-**Q：merge 結果出現模型標籤（「基準:」、「參考 1:」）沒有被清除**
-
-調高 `config.py` 中的 `LLM_TEMP` 或修改 `prompts/prompt_merge_llm.py` 的 `SYSTEM_PROMPT` 規則。
-
 ---
 
 ## 輸出檔案命名規則
@@ -204,3 +216,10 @@ LLM_FILENAME = "qwen2.5-7b-instruct-q4_k_m.gguf"  # 更高品質，但更慢
 | Faster-Whisper large-v3-turbo | `_fw_large.srt` |
 | SenseVoice | `_sensevoice.srt` |
 | LLM 融合結果 | `_merged.srt` |
+
+---
+
+## 致謝、共同編程
+Gemini🥇
+Claude🥈
+PC(我)🥉

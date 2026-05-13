@@ -311,3 +311,22 @@ UnboundLocalError: cannot access local variable 'punc_res' where it is not assoc
 2026-05-13 12:24:37,716 [INFO] [whisper] 跳過
 2026-05-13 12:24:37,716 [INFO] [fw_medium] 跳過
 2026-05-13 12:24:37,716 [INFO] [fw_large] 跳過
+2026-05-13 12:31:46,189 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
+2026-05-13 12:31:46,190 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
+2026-05-13 12:31:46,190 [INFO] === Pipeline 完成，總耗時 7.14 分鐘 ===
+2026-05-13 12:33:20,332 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 12:33:20,332 [INFO] 啟用模型：['whisper', 'fw_large', 'sensevoice']
+2026-05-13 12:33:20,332 [INFO] 執行 LLM merge：True
+2026-05-13 12:37:01,902 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 12:37:01,902 [INFO] 啟用模型：[]
+2026-05-13 12:37:01,902 [INFO] 執行 LLM merge：True
+2026-05-13 12:37:01,902 [INFO] [whisper] 跳過
+2026-05-13 12:37:01,902 [INFO] [fw_medium] 跳過
+2026-05-13 12:37:01,902 [INFO] [fw_large] 跳過
+2026-05-13 12:37:01,902 [INFO] [sensevoice] 跳過
+2026-05-13 12:37:01,902 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
+2026-05-13 12:37:01,902 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
+2026-05-13 12:37:01,902 [INFO] [sensevoice] 使用既有 SRT：TC0408-01_sensevoice.srt
+2026-05-13 12:37:04,166 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-7B-Instruct-GGUF "HTTP/1.1 200 OK"
+2026-05-13 12:37:04,385 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-13 12:37:04,615 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q3_k_m.gguf "HTTP/1.1 302 Found"

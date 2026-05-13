@@ -50,7 +50,7 @@ def resolve_enabled_models(cli_models: list[str] | None) -> dict[str, bool]:
     """
     決定這次執行要開啟哪些模型。
     cli_models 為 None 時使用 config.py 預設值；
-    否則以 CLI 傳入的清單為準（merge 另外處理）。
+    否則以 CLI 傳入的清單為準（空 list = 全部關閉）。
     """
     if cli_models is None:
         return {k: getattr(cfg, flag) for k, (flag, *_) in MODEL_MAP.items()}
@@ -87,8 +87,11 @@ def main():
     if cli_models is not None:
         run_merge  = "merge" in cli_models
         cli_models = [m for m in cli_models if m != "merge"]
-
-    enabled = resolve_enabled_models(cli_models if cli_models else None)
+        # cli_models 可能在移除 "merge" 後變成空 list（例如 --models merge）
+        # 此時代表「不跑任何語音模型，只跑 merge」，需明確傳入空 list 而非 None
+        enabled = resolve_enabled_models(cli_models)
+    else:
+        enabled = resolve_enabled_models(None)
 
     log.info(f"=== Pipeline 開始：{audio_path.name} ===")
     log.info(f"啟用模型：{[k for k,v in enabled.items() if v]}")
