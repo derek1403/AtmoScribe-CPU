@@ -265,3 +265,49 @@ UnboundLocalError: cannot access local variable 'punc_res' where it is not assoc
 2026-05-11 10:31:00,960 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
 2026-05-11 10:31:00,960 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
 2026-05-11 10:31:00,960 [INFO] === Pipeline 完成，總耗時 2.64 分鐘 ===
+2026-05-12 15:33:08,013 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-12 15:33:08,013 [INFO] 啟用模型：[]
+2026-05-12 15:33:08,013 [INFO] 執行 LLM merge：False
+2026-05-12 15:33:08,013 [INFO] [whisper] 跳過
+2026-05-12 15:33:08,013 [INFO] [fw_medium] 跳過
+2026-05-12 15:33:08,013 [INFO] [fw_large] 跳過
+2026-05-12 15:33:08,013 [INFO] [sensevoice] 跳過
+2026-05-12 15:33:08,013 [INFO] [whisper] 使用既有 SRT：TC0408-01_whisper.srt
+2026-05-12 15:33:08,013 [INFO] [fw_large] 使用既有 SRT：TC0408-01_fw_large.srt
+2026-05-12 15:33:08,013 [INFO] === Pipeline 完成，總耗時 0.00 分鐘 ===
+2026-05-12 15:33:27,404 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-12 15:33:27,404 [INFO] 啟用模型：['sensevoice']
+2026-05-12 15:33:27,404 [INFO] 執行 LLM merge：False
+2026-05-12 15:33:27,404 [INFO] [whisper] 跳過
+2026-05-12 15:33:27,404 [INFO] [fw_medium] 跳過
+2026-05-12 15:33:27,405 [INFO] [fw_large] 跳過
+2026-05-13 03:01:14,372 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 03:01:14,372 [INFO] 啟用模型：['sensevoice']
+2026-05-13 03:01:14,373 [INFO] 執行 LLM merge：False
+2026-05-13 03:01:14,373 [INFO] [whisper] 跳過
+2026-05-13 03:01:14,373 [INFO] [fw_medium] 跳過
+2026-05-13 03:01:14,373 [INFO] [fw_large] 跳過
+2026-05-13 03:05:28,874 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 03:05:28,874 [INFO] 啟用模型：['sensevoice']
+2026-05-13 03:05:28,875 [INFO] 執行 LLM merge：False
+2026-05-13 03:05:28,875 [INFO] [whisper] 跳過
+2026-05-13 03:05:28,875 [INFO] [fw_medium] 跳過
+2026-05-13 03:05:28,875 [INFO] [fw_large] 跳過
+2026-05-13 03:13:29,330 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 03:13:29,330 [INFO] 啟用模型：['sensevoice']
+2026-05-13 03:13:29,330 [INFO] 執行 LLM merge：False
+2026-05-13 03:13:29,331 [INFO] [whisper] 跳過
+2026-05-13 03:13:29,331 [INFO] [fw_medium] 跳過
+2026-05-13 03:13:29,331 [INFO] [fw_large] 跳過
+2026-05-13 10:26:49,914 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 10:26:49,914 [INFO] 啟用模型：['sensevoice']
+2026-05-13 10:26:49,914 [INFO] 執行 LLM merge：False
+2026-05-13 10:26:49,914 [INFO] [whisper] 跳過
+2026-05-13 10:26:49,914 [INFO] [fw_medium] 跳過
+2026-05-13 10:26:49,914 [INFO] [fw_large] 跳過
+2026-05-13 12:24:37,715 [INFO] === Pipeline 開始：TC0408-01.mp3 ===
+2026-05-13 12:24:37,715 [INFO] 啟用模型：['sensevoice']
+2026-05-13 12:24:37,716 [INFO] 執行 LLM merge：False
+2026-05-13 12:24:37,716 [INFO] [whisper] 跳過
+2026-05-13 12:24:37,716 [INFO] [fw_medium] 跳過
+2026-05-13 12:24:37,716 [INFO] [fw_large] 跳過
